@@ -1,4 +1,5 @@
 # Mechanics project
+![alt text](3d-model/Чертеж_сборки_требушета.png)
 
 Дано:
 
