@@ -22,21 +22,7 @@ def calculate_r(m1, m2, ma, h, l, a1, a2, is_shift=False, visualize=False):
     a2r = np.radians(a2)
 
 #----------------------------------------------------------------------------------------------
-    I_1 = m1*(l**2) + (ma*(l**2))/3
-    I_1 = m2*(l**2) + (ma*(l**2))/3
-
-    M_1 = m1 * G * l
-    M_2 = m2 * G * l
-
-    eps_1 = M_1 / I_1
-    eps_2 = M_2 / I_1
-
-    eps = eps_2 - eps_1
-    acceleration = eps * l
-
-    time = np.sqrt((2*(np.radians(180-a2-a1)))/(eps))
-
-    speed = acceleration * time
+    speed = np.sqrt((2*G*l*(np.cos(a1r) + np.cos(a2r))*(m2-m1))/(m1+m2))
 #----------------------------------------------------------------------------------------------
 
     print('Скорость вылета:', speed)
@@ -129,7 +115,7 @@ def main():
                         help="Высота оси вращения.", type=float)
     
     parser.add_argument("--l", default=lever_length,
-                        help="Длина рычага (от оси до края).", type=float)
+                        help="Длина плеча (от оси до края).", type=float)
     
     parser.add_argument("--alpha", default=alpha,
                         help="Начальный угол.", type=float)
