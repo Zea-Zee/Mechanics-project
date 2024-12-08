@@ -115,7 +115,7 @@ def main():
                         help="Высота оси вращения.", type=float)
     
     parser.add_argument("--l", default=lever_length,
-                        help="Длина плеча (от оси до края).", type=float)
+                        help="Длина плеча (от оси до края рычага).", type=float)
     
     parser.add_argument("--alpha", default=alpha,
                         help="Начальный угол.", type=float)
